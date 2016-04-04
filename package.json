@@ -4,7 +4,7 @@
   "description": "Random Activity Generator",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.4.3",
