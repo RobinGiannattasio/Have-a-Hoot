@@ -3,63 +3,63 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      options:{
-        separator: ";"
-      },
-      dist: {
-        src: 'public/client/*.js',
-        dest: 'public/dist/production.js',
-      }
+      // options:{
+      //   separator: ";"
+      // },
+      // dist: {
+      //   src: 'public/client/*.js',
+      //   dest: 'public/dist/production.js',
+      // }
     },
 
     uglify: {
-      build: {
-        src: 'public/dist/production.js',
-        dest: 'public/dist/production.min.js'
-      }
+      // build: {
+      //   src: 'public/dist/production.js',
+      //   dest: 'public/dist/production.min.js'
+      // }
     },
 
-    jshint: {
-      files: [
-        '*.js',
-        'app/*.js',
-        'lib/*.js',       
-        'app/collections/*.js',
-        'app/models/*.js',
-      ],
-      options: {
-        force: 'false',
-        jshintrc: '.jshintrc',
-        ignores: [
-          'public/lib/**/*.js',
-          'public/dist/**/*.js'
-        ]
-      }
-    },
+    // jshint: {
+    //   files: [
+    //     '*.js',
+    //     'app/*.js',
+    //     'lib/*.js',       
+    //     'app/collections/*.js',
+    //     'app/models/*.js',
+    //   ],
+    //   options: {
+    //     force: 'false',
+    //     jshintrc: '.jshintrc',
+    //     ignores: [
+    //       'public/lib/**/*.js',
+    //       'public/dist/**/*.js'
+    //     ]
+    //   }
+    // },
 
-    cssmin: {//code here
-      build: {
-        src: 'public/*.css',
-        dest: 'public/dist/style.css'
-      }
-    },
+    // cssmin: {//code here
+    //   build: {
+    //     src: 'public/*.css',
+    //     dest: 'public/dist/style.css'
+    //   }
+    // },
 
-    watch: {
-      scripts: {
-        files: [
-          'public/client/**/*.js',
-          'public/lib/**/*.js',
-        ],
-        tasks: [
-          'concat',
-          'uglify'
-        ]
-      },
-      css: {
-        files: 'public/*.css',
-        tasks: ['cssmin']
-      }
-    },
+    // watch: {
+    //   scripts: {
+    //     files: [
+    //       'public/client/**/*.js',
+    //       'public/lib/**/*.js',
+    //     ],
+    //     tasks: [
+    //       'concat',
+    //       'uglify'
+    //     ]
+    //   },
+    //   css: {
+    //     files: 'public/*.css',
+    //     tasks: ['cssmin']
+    //   }
+    // },
 
     shell: {
       prodServer: {
@@ -92,22 +92,22 @@ module.exports = function(grunt) {
     nodemon.stdout.pipe(process.stdout);
     nodemon.stderr.pipe(process.stderr);
 
-    grunt.task.run([ 'watch' ]);
+    // grunt.task.run([ 'watch' ]);
   });
 
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
-  grunt.registerTask('test', [
-    'jshint',
-  ]);
+  // grunt.registerTask('test', [
+  //   'jshint',
+  // ]);
 
-  grunt.registerTask('build', [
-    'concat',
-    'uglify',
-    'cssmin'
-  ]);
+  // grunt.registerTask('build', [
+  //   'concat',
+  //   'uglify',
+  //   'cssmin'
+  // ]);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
@@ -118,8 +118,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    'test',
-    'build',
+    // 'test',
+    // 'build',
     'upload'
   ]);
 
