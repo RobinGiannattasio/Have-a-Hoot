@@ -1,0 +1,16 @@
+{
+  "name": "boredom-buster",
+  "version": "0.0.0",
+  "description": "activity idea generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js",
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "~3.4.8",
+    "express-partials": "~0.2.0",
+    "lodash": "2.4",
+    "request": "^2.34.0"
+  }
+}
