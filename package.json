@@ -4,7 +4,7 @@
   "description": "activity idea generator",
   "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "preinstall": "npm install -g grunt-cli",
     "postinstall": "grunt build"
   },
