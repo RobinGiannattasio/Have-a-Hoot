@@ -1,16 +1,11 @@
 var express = require('express');
-// var partials = require('express-partials');
-// var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var app = express();
 
-// app.use(partials());
-// app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
+//database connection
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/activities');
+
 app.use(express.static(__dirname + '/CLIENT'));
-
-// app.get('/', function(req,res){
-
-// })
 
 module.exports = app;

@@ -14,6 +14,5 @@ angular.module('Randomizer', [])
     
     return {
       generateIdea: generateIdea
-    }
-    
-  });
+    }    
+  })

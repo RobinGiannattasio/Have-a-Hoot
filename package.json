@@ -11,6 +11,7 @@
     "express": "~3.4.8",
     "express-partials": "~0.2.0",
     "lodash": "2.4",
+    "mongoose": "^4.4.11",
     "request": "^2.34.0"
   },
   "engines": {
