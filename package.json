@@ -12,6 +12,7 @@
     "express-partials": "~0.2.0",
     "lodash": "2.4",
     "mongoose": "^4.4.11",
+    "q": "^1.4.1",
     "request": "^2.34.0"
   },
   "engines": {

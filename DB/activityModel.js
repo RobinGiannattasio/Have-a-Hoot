@@ -4,4 +4,4 @@ var ActivitySchema = new mongoose.Schema({
  description: String,
 });
 
-module.exports('Activity', ActivitySchema);
+module.exports = mongoose.model('Activity', ActivitySchema);
