@@ -2,14 +2,16 @@ var Activity = require('./activityModel.js');
     Q = require('q');
     
 var findAllAsync = Q.nbind(Activity.find, Activity),
-    createLinkAsync = Q.nbind(Activity.create, Activity);
+    createLinkAsync = Q.nbind(Activity.create, Activity)
+    removeAsync = Q.nbind(Activity.remove, Activity);
 
 module.exports = {
   allOptions: function (req, res, next){
-    //createLinkAsync(activities);
+    // removeAsync({})
+    // createLinkAsync(activities);
     findAllAsync({})
       .then(function (options) {
-        console.log('+++++', options)
+        console.log('-------', options)
         res.json(options);
       })
       .fail(function (error) {

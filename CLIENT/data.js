@@ -14,6 +14,11 @@ var activities = [
     indoor: true,
     rainy: true
   },
+  {
+    description: 'Learn how to make balloon animals',
+    indoor: true,
+    rainy: true
+  },
   { description: 'Make a marshmallow catapult',
     indoor: true,
     rainy: true
@@ -35,7 +40,7 @@ var activities = [
   { description: 'Sing in the rain', 
     rainy: true
   },
-  { description: 'Jump in the puddles', 
+  { description: 'Catch raindrops in a mason jar!', 
     rainy: true
   },
   { description: 'Make a nature boat', 
