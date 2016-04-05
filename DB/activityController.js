@@ -11,17 +11,33 @@ module.exports = {
     // createLinkAsync(activities);
     findAllAsync({})
       .then(function (options) {
-        console.log('-------', options)
         res.json(options);
       })
       .fail(function (error) {
         next(error);
       });
   },
+  allOutdoor: function (req, res, next){
+    findAllAsync({outdoor: true})
+      .then(function (options) {
+        res.json(options);
+      })
+      .fail(function (error){
+        next(error);
+      });
+  },
+  allIndoor: function (req, res, next){
+    findAllAsync({indoor: true})
+      .then(function (options) {
+        res.json(options);
+      })
+      .fail(function (error){
+        next(error);
+      });
+  },
   allRainy: function (req, res, next){
     findAllAsync({rainy: true})
       .then(function (options) {
-        console.log('*******', options)
         res.json(options);
       })
       .fail(function (error){

@@ -40,7 +40,7 @@ angular.module('Randomizer', [])
       });
     }
     
-    var getRainy = function(filter){
+    var getRainy = function(){
       var self = this;
       self.display = 'Rainy day activities generated!';
       return $http({
@@ -55,8 +55,40 @@ angular.module('Randomizer', [])
       });
     }
     
+    var getOutdoor = function(){
+      var self = this;
+      self.display = 'Outdoor activities generated!';
+      return $http({
+        method: 'GET',
+        url: '/outdoor'
+      }).
+      then(function(response){
+        return response.data;
+      })
+      .then(function(response){
+        self.options = response;
+      });
+    }
+    
+    var getIndoor = function(){
+      var self = this;
+      self.display = 'Indoor activities generated!';
+      return $http({
+        method: 'GET',
+        url: '/indoor'
+      }).
+      then(function(response){
+        return response.data;
+      })
+      .then(function(response){
+        self.options = response;
+      });
+    }
+    
     return {
       getAll: getAll,
-      getRainy: getRainy
+      getRainy: getRainy,
+      getOutdoor: getOutdoor,
+      getIndoor: getIndoor
     }
   });

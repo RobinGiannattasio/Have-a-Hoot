@@ -20,12 +20,12 @@
         <div class = 'idea'>
           <h4> {{display}} </h4>
         </div>
-        <button ng-click="generateIdea()">Click me!</button>
+        <button ng-disabled="!options.length" ng-click="generateIdea()">Click me!</button>
         <nav class="navigation">
         <ul>
           <li><a ng-click='getAll()'>All Activities</a></li>
-          <li><a>Outdoor</a></li>
-          <li><a>Indoor</a></li>
+          <li><a ng-click='getOutdoor()'>Outdoor</a></li>
+          <li><a ng-click='getIndoor()'>Indoor</a></li>
           <li><a ng-click='getRainy()'>Rainy Days</a></li>
         </ul>
       </nav>
