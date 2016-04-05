@@ -11,14 +11,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.min.js"></script>
 
 <h2>Hello World!</h2>
-<div class="row main" ng-controller='OptionsController' ng-init='getOptions()'>
-  <div class="col-md-12 text-center">
-    <img src='ASSETS/OWL.jpg'>
-    <div ng-controller='ActivityController'>
-      <div class = 'idea'>
-        <h4> {{display}} </h4>
+<div ng-controller='OptionsController'>
+
+  <div class="row main">
+    <div class="col-md-12 text-center">
+      <img src='ASSETS/OWL.jpg'>
+      <div ng-controller='ActivityController'>
+        <div class = 'idea'>
+          <h4> {{display}} </h4>
+        </div>
+        <button ng-click="generateIdea()">Click me!</button>
+        <nav class="navigation">
+        <ul>
+          <li><a ng-click='getAll()'>All Activities</a></li>
+          <li><a>Outdoor</a></li>
+          <li><a>Indoor</a></li>
+          <li><a ng-click='getRainy()'>Rainy Days</a></li>
+        </ul>
+      </nav>
       </div>
-      <button ng-click="generateIdea()">Click me!</button>
     </div>
   </div>
 </div>

@@ -3,17 +3,27 @@ var Activity = require('./activityModel.js');
     
 var findAllAsync = Q.nbind(Activity.find, Activity),
     createLinkAsync = Q.nbind(Activity.create, Activity);
-    
+
 module.exports = {
   allOptions: function (req, res, next){
-    // createLinkAsync({description: 'test'});
+    //createLinkAsync(activities);
     findAllAsync({})
-      .then(function(options){
+      .then(function (options) {
+        console.log('+++++', options)
+        res.json(options);
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  },
+  allRainy: function (req, res, next){
+    findAllAsync({rainy: true})
+      .then(function (options) {
         console.log('*******', options)
         res.json(options);
       })
-      .fail(function(error){
-        next(error)
-      })
+      .fail(function (error){
+        next(error);
+      });
   }
 }

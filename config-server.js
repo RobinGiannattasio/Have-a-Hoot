@@ -12,5 +12,6 @@ app.use(express.static(__dirname + '/CLIENT'));
 //routes
 var activityController = require('./DB/activityController.js')
 app.get('/activities', activityController.allOptions);
+app.get('/rainy', activityController.allRainy);
 
 module.exports = app;
