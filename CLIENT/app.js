@@ -23,7 +23,7 @@ angular.module('Randomizer', [])
       generateIdea: generateIdea,
     }    
   })
-  .factory('Selector', function($http){
+  .factory('Selector', function($http){ 
     //send get request for activity options
     var getAll = function () {
       var self = this;
@@ -85,10 +85,20 @@ angular.module('Randomizer', [])
       });
     }
     
+  //post user idea
+    var addIdea = function (activity) {
+      return $http({
+        method: 'POST',
+        url: '/user',
+        data: activity
+      })
+    };
+    
     return {
       getAll: getAll,
       getRainy: getRainy,
       getOutdoor: getOutdoor,
-      getIndoor: getIndoor
+      getIndoor: getIndoor,
+      addIdea: addIdea
     }
   });

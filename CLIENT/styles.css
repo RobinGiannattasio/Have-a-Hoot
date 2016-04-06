@@ -6,12 +6,19 @@ h2 {
   margin-left: 10px;
 }
 
+h5 {
+  margin-left: 10px;
+  margin-top: -8px;
+  color: grey;
+  font-style: italic;
+}
+
 .main {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 nav {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .navigation {
@@ -46,4 +53,16 @@ nav {
 
 .navigation li a.selected {
   background-color: #ccc;
+}
+
+input {
+  margin-top: 15px;
+  width: 360px;
+  display: block;
+  font-size: 13px;
+  padding: 5px;
+}
+
+input[type=text] {
+  display: inline
 }

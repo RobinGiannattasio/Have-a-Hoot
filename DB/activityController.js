@@ -43,5 +43,16 @@ module.exports = {
       .fail(function (error){
         next(error);
       });
+  },
+  postActivity: function (req, res, next){
+    console.log(req.body);
+    var description = req.body.description;
+    console.log(description);
+    var addActivity = {
+      description: description,
+      user: true
+    };
+    console.log('adding ' + JSON.stringify(addActivity));
+    createLinkAsync(addActivity);
   }
 }
